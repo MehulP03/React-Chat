@@ -18,19 +18,19 @@ function MenuBar() {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
-        console.log(user);
+
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         const email = error.email;
         const credential = GoogleAuthProvider.credentialFromError(error);
+        
       });
   };
 
   return (
     <>
-      <h2>You Are in Navbar</h2>
       <AppBar>
         <Container>
           <Toolbar>
@@ -39,8 +39,11 @@ function MenuBar() {
           </Toolbar>
         </Container>
       </AppBar>
-<Chat />
-  </>
+      <div style={{margineTop:150}}>
+      <Chat />
+      </div>
+      
+    </>
   );
 }
 export default MenuBar;
